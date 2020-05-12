@@ -1,2 +1,2 @@
 # MrbWrap
-Template library to wrap C++ classes and methods into mruby
+Template library collection to wrap C++ classes and methods into mruby
