@@ -137,17 +137,18 @@ puts "enemy_1 has #{enemy_1.hp} HP"
 
 Not every arbitrary class can be wrapped using this library. At the moment, the following argument or attribute data types can be safely wrapped:
 * Integer types
-* const char*
-* std::string
+* const char* (without default arguments)
+* std::string (without default arguments)
 * bool
+* float
 
-Floating point types are also possible, but if default arguments are required, the following default wrapper needs to be used, for example, to set a float argument with default value 1.5:
+Floating point types are completely possible, but if default arguments are required, the following default wrapper needs to be used, for example, to set a float argument with default value 1.5:
 
 ```c++
 MRBW_RAT_OPT<float, 3, 2>
 ```
 
-This is a limitation due to the fact that floating point types are not allowed as template arguments.
+This is a limitation due to the fact that floating point types are not allowed as template arguments. For the same reason, string classes have no default argument support yet (this might change in later versions).
 
 Most classes and structs are also easily integratable, but the following limitations apply:
 * A standard constructor with no arguments must be specified.
