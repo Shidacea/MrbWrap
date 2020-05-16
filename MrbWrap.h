@@ -41,14 +41,6 @@ namespace MrbWrap {
 	//! Will be defined below
 	template <class T> mrb_value ruby_class_default_init_copy(mrb_state* mrb, mrb_value self);
 
-	//! Universal destructor wrapped into a C representation
-	//! Will be used as callback for ruby object deallocation
-	template <class T> static void free_data(mrb_state* mrb, void* object_ptr) {
-
-		delete static_cast<T*>(object_ptr);
-
-	}
-
 	//! Create and returns a ruby class which can be used as a C++ class wrapper
 	//! Use this when setting up a ruby class
 	inline RClass* define_data_class(mrb_state* mrb, const char* name, RClass* super_class = nullptr) {

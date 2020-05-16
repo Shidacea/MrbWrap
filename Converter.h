@@ -4,6 +4,14 @@
 
 namespace MrbWrap {
 
+	//! Universal destructor wrapped into a C representation
+	//! Will be used as callback for ruby object deallocation
+	template <class T> static void free_data(mrb_state* mrb, void* object_ptr) {
+
+		delete static_cast<T*>(object_ptr);
+
+	}
+
 	//! Creates a direct ruby wrapper for any C++ object and stores it in 'self'
 	//! Constructor arguments can be given as 'TArgs', if needed
 	//! The name of the class T will be used as the argument for the ruby-internal name

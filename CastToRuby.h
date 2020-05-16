@@ -5,6 +5,7 @@
 
 #include "DefaultWrap.h"
 #include "FileString.h"
+#include "Converter.h"
 
 namespace MrbWrap {
 
