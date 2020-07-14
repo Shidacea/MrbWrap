@@ -122,7 +122,8 @@ namespace MrbWrap {
 
 		} else if constexpr (std::is_same_v<Dest, mrb_value>) {
 
-			return mrb_value();
+			mrb_value dummy = mrb_nil_value();
+			return dummy;
 
 		} else if constexpr (std::conjunction_v<std::is_same<C, mrb_value>, std::is_pointer<Dest>>) {
 
