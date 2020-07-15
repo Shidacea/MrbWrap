@@ -4,11 +4,25 @@
 
 namespace MrbWrap {
 
+	//! Utility method for more descriptive code
+	template <class T> inline static T* cast_ptr(void* object_ptr) {
+
+		return static_cast<T*>(object_ptr);
+
+	}
+
+	//! Utility method for more descriptive code
+	template <class T> inline static void call_destructor(void* object_ptr) {
+
+		delete cast_ptr<T>(object_ptr);
+
+	}
+
 	//! Universal destructor wrapped into a C representation
 	//! Will be used as callback for ruby object deallocation
 	template <class T> static void free_data(mrb_state* mrb, void* object_ptr) {
 
-		delete static_cast<T*>(object_ptr);
+		call_destructor<T>(object_ptr);
 
 	}
 

@@ -112,6 +112,7 @@ namespace MrbWrap {
 		} else if constexpr (std::is_same_v<Dest, FileString>) {
 
 			//! TODO: Cache these maybe
+			//! TODO: Integrate custom templated handler
 
 			//! This is a really vile solution, but it pays out massively.
 
