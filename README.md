@@ -2,7 +2,7 @@
 
 MrbWrap provides C++ template methods in order to wrap classes directly into mruby without dealing with format strings, type conversions and 10 lines of code, just to wrap a simple integer attribute.
 
-This library is designed to provide the backend for the [Shidacea game engine](https://github.com/Shidacea/Shidacea). It can also be used as a tool to create mruby gems for C++ libraries easily.
+This library is designed to provide the backend for the [Shidacea game engine](https://github.com/Shidacea). It can also be used as a tool to create mruby gems for C++ libraries easily.
 
 # Requirements
 
